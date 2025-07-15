@@ -659,7 +659,6 @@ header.scrolled .menu-toggle {
   left: 0;
   width: 100%;
   height: 140%; /* 여유있게 커야 자연스러움 */
-  background-image: url('/images/cafe.png');
   background-size: cover;
   background-position: center;
   transform: translateY(0px);
@@ -802,13 +801,19 @@ header.scrolled .menu-toggle {
 }
 
 .notice-background {
-  background-image: url(/images/coffee.png);
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
+  filter: brightness(0.7);
+}
+
+.notice-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 💡 배경처럼 꽉 채우는 핵심 */
   filter: brightness(0.7);
 }
 
