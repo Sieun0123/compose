@@ -1,0 +1,899 @@
+/* 기본 폰트 및 색상 */
+body {
+  background: none; /* ✅ 흰 배경 제거 */
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  color: #000;
+}
+
+/* 헤더 전체 */
+header {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap; /* ✅ 줄바꿈 방지 */
+  justify-content: space-between;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s, color 0.3s;
+  padding: 30px 50px;
+  position: fixed; /* 중요! 배경 위에 겹치도록 */
+  /* overflow-x: hidden; 이 줄 제거 - 메가메뉴가 헤더 밖으로 나가야 하므로 */
+  flex-wrap: nowrap; /* 줄바꿈 금지 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(120, 120, 120, 0.3); /* ✅ 얇고 은은한 흰색 선 */
+  box-sizing: border-box;
+}
+
+header.scrolled {
+  background-color: white;
+}
+
+header.scrolled nav ul li a,
+header.scrolled .divider,
+header.scrolled .nav-right ul li a {
+  color: rgb(55, 55, 55);
+}
+
+/* 메뉴 조정 */
+.nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  width: 19px;
+  height: 19px;
+}
+.nav-left {
+  display: flex;
+  margin-left: 50px;
+}
+.nav-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-right: 115px; /* ⬅️ LOGIN .. 등 오른쪽 여백 확보 */
+}
+
+.nav-right ul {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nav-right ul li a {
+  font-size: 0.85rem; /* LOGIN .. */
+}
+
+/* 로고 크기 */
+.logo img {
+  max-height: 29px;
+}
+
+/* 공통 메뉴 스타일 */
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 60px; /*메뉴 간격*/
+}
+
+nav ul li a {
+  font-size: 0.85rem; /* ✅ 더 작게 조절 */
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem; /* 메뉴 */
+}
+.nav-cart {
+  height: 18px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+/* | 기호 구분자 */
+.divider {
+  color: white;
+  font-size: 0.95rem;
+  padding: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+/* 히어로 섹션 */
+.hero {
+  position: relative;
+  margin-top: -23px; /* 헤더 위치 */
+  height: 105vh;     /* 이미지 위치 */
+  overflow:hidden;
+  color: white;
+  text-align: center;
+  /* ✅ 배경 이미지 설정 */
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  padding-top: 147px; /* very 어쩌고 */
+}
+
+.hero h1 {
+  color: #FFF;
+  text-align: center;
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 66px; /* 110% */
+  letter-spacing: -0.5px;
+
+  display: flex;
+  width: 522.485px;
+  height: 66px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 auto 8px auto; /* 가운데 정렬 */
+}
+
+.hero p {
+  font-size: 1.5rem;  /* 스페셜티 어쩌고 크기 */
+  font-weight: 0;
+  letter-spacing: -0.3px;
+  margin-bottom: 40px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-direction: row; /* ✅ 가로 정렬 */
+  justify-content: center;
+  margin-top: 112px; /* 노란박스 위치 조절 */
+  gap: 22px;
+}
+
+.stat-font {
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif; /* 원하는 폰트 우선 적용 */
+  font-weight: 520; /* 굵기를 살짝 조정 가능 */
+  /* font-size, line-height 등은 기존 숫자에 영향을 안 주므로 그대로 유지 */
+}
+
+.stat-number {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4px;
+}
+
+.stat-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23px; /* 노란박스랑 숫자 사이 거리 */
+}
+
+.stat-number strong {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.stat-number span {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.stat-group strong {
+  font-size: 2.5rem;
+}
+
+.stat-group span {
+  font-size: 1.2rem;
+  margin-left: 1px;
+}
+
+/* 노란 박스 */
+.stat-label {
+  display: flex;
+  width: 260px;
+  height: 42px;
+  padding: 1px 1px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  background-color: rgba(255, 217, 0, 0.541);
+  border-radius: 21px;
+  font-size: 0.98rem;
+  color: rgba(9, 9, 9, 0.667);
+  white-space: nowrap;
+}
+.stat-number strong {
+  font-size: 2.5rem;
+  white-space: nowrap;
+}
+.stat-number span {
+  font-size: 1.2rem;
+}
+
+
+/* 🟧 플로팅 상담 버튼 */
+.floating-panel {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  background-color: #1D1D1D;
+  border-radius: 10px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  z-index: 99999;
+  width: 75px;
+  pointer-events: auto; /* 마우스 이벤트 활성화 */
+}
+
+.floating-item p {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.5;     /* ✅ 줄간격 조절 */
+  font-size: 0.85rem;    /* ✅ 글자 작게 */
+  word-break: keep-all; /* ✅ 줄바꿈 방지 (선택) */
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.floating-item:hover {
+  transform: scale(1.05);
+}
+.floating-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.floating-icon {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 6.88px;
+}
+
+/* 메뉴 텍스트 기본 */
+.nav-left ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 70;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+/* 호버하면 색상 변경 */
+.nav-left ul li:hover > a {
+  color: #ffcc00; /* 노란색으로 */
+}
+
+/* 메뉴 아이템 */
+.menu-item {
+  position: relative;
+}
+
+/* ✅ 기존 submenu 관련 CSS 제거하고 메가메뉴로 교체 */
+
+/* 메가 메뉴 전체 - 헤더 밖에 위치 */
+.mega-menu {
+  position: fixed;
+  top: 95px; /* 헤더 높이만큼 아래로 */
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 217, 0, 0.95);
+  display: none;
+  z-index: 9999;
+  padding: 50px 0px;
+  box-sizing: border-box;
+  animation: slideDown 0.3s ease-in-out;
+}
+
+.mega-menu-inner {
+  display: flex;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mega-column {
+  flex: 1;
+}
+
+.mega-column h3 {
+  font-size: 1.1rem;
+  font-weight: 530;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.mega-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-column ul li {
+  font-size: 0.95rem;
+  padding: 6px 0;
+  color: #111;
+  cursor: pointer;
+}
+
+.mega-column ul li:hover {
+  text-decoration: underline;
+}
+
+.new {
+  background: rgb(255, 32, 32);
+  color: white;
+  font-size: 0.7rem;
+  padding: 1px 4px;
+  margin-left: 4px;
+  border-radius: 3px;
+}
+
+/* 나타나는 애니메이션 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content ul li {
+  padding: 8px 0;
+  color: #000000;
+  font-size: 1rem;
+}
+
+.floating-buttons a {
+  background-color: #828282;
+  color: white;
+  padding: 12px 15px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.38);
+  transition: all 0.2s;
+}
+.hero-title {
+  display: flex;
+  width: 522.485px;
+  height: 66px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  margin: 0 auto; /* 가운데 정렬 */
+}
+.hero-title h1 {
+  color: #FFF;
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 66px;
+  letter-spacing: -0.5px;
+  margin: 0;
+  text-align: center;
+}
+
+.floating-buttons a:hover {
+  background-color: #bd1313;
+}
+
+/* 자동 슬라이드 애니메이션 */
+/* 🟡 gallery */
+.gallery {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 슬라이더 컨테이너 */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* 슬라이더 내부 */
+.slider {
+  display: flex;
+  width: 100%; /* 100% * 5 slides */
+  transition: transform 0.6s ease-in-out;
+}
+
+/* 각각의 슬라이드 */
+.slide {
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+}
+/* 메뉴 토글 버튼 */
+.menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 60px;
+  z-index: 2000;
+  cursor: pointer;
+}
+/* 기본 상태 (투명 헤더) */
+.menu-toggle {
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* 헤더가 스크롤된 경우 아이콘 색상 변경 */
+header.scrolled .menu-toggle {
+  color: #424242;
+}
+.menu-toggle,
+.menu-close {
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+/* 처음엔 X 표시 안 보임 */
+.menu-close {
+  display: none;
+  color: white;
+}
+
+/* 스크롤 시 색상 변경 (선택) */
+header.scrolled .menu-close {
+  color: #424242;
+}
+header.scrolled .menu-toggle {
+  color: #424242;
+}
+
+/* 전체 화면 노란 메뉴 */
+.full-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FED900;
+  z-index: 1999;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 35px 100px;
+  box-sizing: border-box;
+}
+
+.full-menu-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 90px;
+}
+
+.menu-column h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #464646; /* 밑줄 (__) */
+  padding-bottom: 15px;
+  color: #2d2d2d;
+  font-weight: 501;
+}
+
+.menu-column ul {
+  list-style: none;
+  padding: 0; /* 메뉴 선 조절 */
+  margin: 0;
+}
+
+.menu-column ul li {
+  font-size: 0.95rem;
+  padding: 5px;
+  padding-left: 0px;
+  color: #303030;
+  cursor: pointer;
+  font-weight: 400;
+}
+.menu-column {
+  flex: 1;
+  padding: 15px; /* ← 선 길이랑 왼쪽으로 이동 */
+}
+
+.menu-column ul li:hover {
+  text-decoration: underline;
+}
+
+.full-menu-logo {
+  text-align: center;
+  margin-top: 10px;
+}
+.full-menu-logo img {
+  height: 85px;
+}
+
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 55px;
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* 컴포즈 가맹점 */
+.store-section {
+  padding: 65px 60px;
+  background: white;
+  text-align: center;
+}
+
+.store-line {
+  width: 50px;
+  height: 1px;
+  background-color: #222;  /* 선 색상 */
+  margin: 20px auto 25px auto;  /* 위/아래 여백 및 중앙 정렬 */
+}
+.store-text h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #000;
+  margin-bottom: 15px;
+}
+
+.store-text p {
+  font-size: 1.1rem;
+  color: #535353;
+  margin-bottom: 30px;
+}
+
+.store-btn {
+  background-color: #2f2f2f;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.store-gallery {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 24px;
+  margin-top: 70px;
+  flex-wrap: wrap;
+}
+
+.store-card {
+  position: relative;
+  width: 280px;
+  border-radius: 2px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 0 0 calc(25% - 18px);  /* ✅ 한 줄에 4개: (100% - gap 총합) / 4 */
+  max-width: 1000px;
+}
+
+.store-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ✅ 하단 span 텍스트가 검정 배경 안에서 중앙에 위치하도록 조정 */
+.store-card span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 12px 0;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* 고품질 어쩌고 .. */
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-image {
+  position: absolute;
+  top: 35%;
+  left: 0;
+  width: 100%;
+  height: 140%; /* 여유있게 커야 자연스러움 */
+  background-image: url('/images/cafe.png');
+  background-size: cover;
+  background-position: center;
+  transform: translateY(0px);
+  transition: transform 0.1s linear;
+  z-index: 0;
+}
+
+/* 어두운 필터 */
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* 고정된 글자 */
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.parallax-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.parallax-line {
+  width: 60px;
+  height: 2px;
+  background: white;
+  margin: 0 auto 16px auto;
+}
+
+.parallax-content p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.more-button{
+  margin-top: 12px;
+  padding: 13px 50px;
+  border: 2px solid rgb(255, 255, 255);
+  background: transparent;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.more-button:hover{
+  background: white;
+  color: black;
+}
+.more-button a {
+
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.more-button:hover a {
+  color: black;
+}
+
+/* 사진 */
+.photo-grid-section {
+  padding: 0;
+  margin: 0;
+}
+
+.photo-grid {
+  display: flex;
+  height: 100vh;
+}
+.sub {
+  margin-bottom: 10px; /* 노란색과 흰색 제목 간격 좁힘 */
+}
+.photo-item {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.photo-item.large {
+  flex: 0.7;
+}
+
+.photo-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.photo-column .photo-item {
+  height: 30%;
+}
+
+.photo-text {
+  position: absolute;
+  top: 5cqw;
+  left: 50px;
+  z-index: 2;
+  max-width: 75%;
+}
+
+.photo-text .sub {
+  font-size: 1.1rem;
+  color: #f6d800;
+  margin-bottom: 0px;
+  line-height: 1.2;
+}
+
+.photo-text h3 {
+  margin-top: 4px;
+  font-size: 33px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.notice-section {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.notice-background {
+  background-image: url(/images/coffee.png);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+}
+
+.notice-inner {
+  position: relative;
+  justify-content: center;
+  flex-wrap: nowrap; 
+  z-index: 1;
+  overflow-x: auto; 
+  color: white;
+  text-align: center;
+  padding: 20px 0px;
+}
+
+.notice-inner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.notice-line {
+  background-color: white;
+  margin: 0 auto 16px auto;
+  width: 50px;
+  height: 1px;
+  flex-shrink: 0;
+}
+
+.notice-inner p {
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+}
+
+.notice-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.notice-card {
+  background: rgba(255, 255, 255, 0.60);
+  padding: 20px 20px 90px 20px;
+  color: #222;
+  width: 250px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.notice-card h3 {
+  font-family: Poppins;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25.5px; /* 150% */
+  letter-spacing: -0.5px;
+}
+
+.notice-card span {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* + 더보기 버튼 재사용 */
+.more-button {
+  margin-top: 12px;
+  padding: 13px 50px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.more-button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.more-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.more-button:hover a {
+  color: black;
+}
