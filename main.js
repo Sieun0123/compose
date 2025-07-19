@@ -144,13 +144,31 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const noticeImg = document.querySelector(".notice-background img");
-  
-  if (noticeImg) {
-      // 스크롤 속도 조절 (0.1 ~ 0.3 사이 값 추천)
-      const parallaxSpeed = 0.2;
-      noticeImg.style.transform = `scale(1.3) translateY(${scrollY * parallaxSpeed}px)`;
+const noticeImg = document.querySelector(".notice-background img");
+let latestScrollY = 0;
+let ticking = false;
+
+function onScroll() {
+  latestScrollY = window.scrollY;
+  requestTick();
+}
+
+function requestTick() {
+  if (!ticking) {
+    requestAnimationFrame(updateParallax);
+    ticking = true;
   }
-});
+}
+
+function updateParallax() {
+  const parallaxSpeed = 0.2;
+  const translateY = latestScrollY * parallaxSpeed;
+
+  if (noticeImg) {
+    noticeImg.style.transform = `translateY(${translateY}px)`;
+  }
+
+  ticking = false;
+}
+
+window.addEventListener("scroll", onScroll);

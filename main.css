@@ -654,20 +654,21 @@ header.scrolled .menu-toggle {
 /* 고품질 어쩌고 .. */
 .parallax-section {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
 .parallax-image {
   position: absolute;
-  top: 35%;
+  top: 50%;
   left: 0;
   width: 100%;
-  height: 120%;
+  height: 130%;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
-  transform: translateY(0px);
-  transition: transform 0.3s linear;
+  transform: translate3d(0px, -135.919px, 0px);
+  transition: transform 0.2s ease-out;
   z-index: 0;
 }
 
@@ -799,49 +800,54 @@ header.scrolled .menu-toggle {
 .notice-section {
   position: relative;
   height: 100vh;
-  background-image: url('images/coffee.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; /* 패럴랙스 효과 */
   overflow: hidden;
 }
 
-.notice-background {
+.notice-overlay {
   position: absolute;
   top: 0; left: 0;
-  height: 120%;
   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.272);
+  z-index: 1;
+}
+
+.notice-inner {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.notice-background {
+  background-image: url('images/coffee.jpg');
   background-size: cover;
   background-position: center;
-  filter: brightness(0.1);
-  transition: transform 0.1s ease-out;
   will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  z-index: 0;
+  transform: translateY(0);
+  transition: transform 0.2s ease-out;
 }
 
 .notice-background img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.6);
-  transform: scale(1.3);
+  transform: translateY(0);
+  transition: transform 0.15s ease-out;
   will-change: transform;
-}
-
-.notice-inner {
-  position: relative;
-  justify-content: center;
-  flex-wrap: nowrap; 
-  z-index: 1;
-  overflow-x: auto; 
-  color: white;
-  text-align: center;
-  padding: 100px 0px 8px 0px;
 }
 
 .notice-inner h2 {
   font-size: 2.3rem;
-  margin-bottom: 25px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 .notice-line {
@@ -855,7 +861,7 @@ header.scrolled .menu-toggle {
 .notice-inner p {
   font-size: 1.2rem;
   font-weight: 200;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 
 .notice-cards {
@@ -863,42 +869,27 @@ header.scrolled .menu-toggle {
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
-  margin-top: -50px;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .notice-card {
-  width: 250px;
-  background: rgba(255, 255, 255, 0.60);
-  padding: 7px 7px 85px 7px;
-  color: #222;
   width: 240px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #222;
+  padding: 12px 12px 85px;
   text-align: left;
 }
 
 .notice-card h3 {
-  font-family: Poppins;
-  font-size: 17px;
-  font-style: normal;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 25.5px; /* 150% */
-  letter-spacing: -0.5px;
-  margin-right: 38px;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 
 .notice-card span {
   font-size: 0.85rem;
   color: #555;
-}
-
-.notice-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1;
 }
 
 .more-button {
@@ -924,4 +915,69 @@ header.scrolled .menu-toggle {
 
 .more-button:hover a {
   color: black;
+}
+
+.site-footer {
+  background-color: #1e2029; 
+  padding: 28px 13px;
+  font-size: 0.87rem;
+  line-height: 1.3;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footer-info {
+  max-width: 1000px;
+}
+
+.footer-info p {
+  margin: 4px 0;
+  color: rgba(255, 255, 255, .5);
+}
+
+.footer-info a {
+  color: rgba(255, 255, 255, .5);
+  text-decoration: underline;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: right;
+}
+
+.footer-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+  color: #ffcc00; /* 노란색 포인트 */
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ✅ 반응형 대응 */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .footer-links {
+    text-align: left;
+  }
 }

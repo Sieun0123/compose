@@ -281,7 +281,7 @@
     <!--고품질 ..-->
     <section class="parallax-section">
       <div class="parallax-image">
-        <img src="images/cafe.png" alt="강서등촌중앙점" />
+        <img src="images/cafe.jpg" alt="강서등촌중앙점" />
       </div>
       <div class="parallax-overlay"></div>
       <div class="parallax-content">
@@ -340,11 +340,11 @@
       </div>
       <script src="main.js"></script>
     </section>
-
     <section class="notice-section">
       <div class="notice-background">
-        <img src="images/coffee.jpg" alt="강서등촌중앙점" />
+        <img src="images/coffee.jpg" alt="패럴랙스 배경" />
       </div>
+      <div class="notice-overlay"></div>
       <div class="notice-inner">
         <h2>공지사항</h2>
         <div class="notice-line"></div>
@@ -373,6 +373,56 @@
         </button>
       </div>
     </section>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-info">
+          <p><strong>상호 :</strong> 주식회사 컴포즈커피</p>
+          <p>
+            서울센터 : 서울시 성동구 성수일로 12길 26 서울숲 코리아 IT 센터 11층
+          </p>
+          <p>
+            부산센터 : 부산광역시 해운대구 센텀중앙로 48, 에이스하이테크21
+            812-814
+          </p>
+          <p>
+            TEL : 1899-5685 / FAX : 02-5236-9635 / e-mail :
+            <a href="mailto:compose@composecoffee.com"
+              >compose@composecoffee.com</a
+            >
+          </p>
+          <p>
+            사업자등록번호 : 521-81-02386 / 통신판매업신고증 :
+            제2024-부산해운대-1106호 | 대표 : 김홍석
+          </p>
+          <p class="copyright">© 2021. COMPOSECOFFEE. ALL RIGHTS RESERVED.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+        </div>
+      </div>
+    </footer>
   </body>
   <script src="js/parallax.js"></script>
+  <script>
+    window.addEventListener("scroll", () => {
+      const section = document.querySelector(".notice-section");
+      const image = document.querySelector(".notice-background img");
+
+      if (!section || !image) return;
+
+      const scrollY = window.scrollY;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+
+      // 화면 안에 들어왔을 때만 실행
+      if (
+        scrollY + window.innerHeight > sectionTop &&
+        scrollY < sectionTop + sectionHeight
+      ) {
+        const offset = (scrollY - sectionTop) * -0.3; // 💡 반대 방향으로 이동 (음수 곱함)
+        image.style.transform = `translateY(${offset}px)`;
+      }
+    });
+  </script>
 </html>
