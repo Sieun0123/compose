@@ -1,0 +1,89 @@
+/**
+*  Swiper Custom (Tab Style)
+*/
+
+.swiper-container {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+/*
+.swiper-pagination-bullet {
+	flex: 1 1 auto;
+	padding: 2rem 2rem;
+	border-radius: 0;
+	width: auto;height: 100%;
+	line-height: 1.4;
+	font-size: 17px;
+	text-align: left;
+	color:#000;
+	opacity: 1;
+	background-color: #fff;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	transition: background .3s ease;
+}
+.swiper-pagination-bullet:nth-child(1) {
+	border-left: 0;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+	margin: 0;
+}
+
+*/
+/*autoview*/
+.mySwiper .swiper-slide {
+	width: 80%;
+}
+.mySwiper .swiper-slide:nth-child(2n) {
+	width: 80%;
+}
+
+
+/*dots tabs*/
+.swiper-pagination-bullet h4 {
+	margin: 0;
+	font-size: 30px;
+	font-weight: bold;
+}
+.swiper-pagination-bullet:nth-child(1) h4 {
+	color: #f99d39;
+}
+.swiper-pagination-bullet:nth-child(2) h4 {
+	color: #167dcd;
+}
+.swiper-pagination-bullet:nth-child(3) h4 {
+	color: #c2d600;
+}
+.swiper-pagination-bullet-active {
+	color:#fff;
+	background: #007aff;
+}
+.swiper-pagination-bullet-active h4 {
+	color: #fff !important;
+}
+

@@ -1,0 +1,153 @@
+/*
+ * Board : sketchbook
+ * 20170511 / 20170826 / 20180129 / 20190604
+ * ksodesign custom styling
+ * -----------------------------------
+ */
+ 
+#bd_wizard {z-index: 1100;}
+/* board top */
+.boardHeader h1,
+.board-header h1 {
+    padding: 0;
+    margin-bottom: 3rem;
+    font-size: 40px !important;
+    text-align: center;
+    color: #111 !important;
+}
+.restboard .form-inline label {
+    margin-right: 1rem;
+    font-size: 14px;
+}
+.restboard .form-inline label>input {
+    margin-right: 5px;
+}
+
+.bd .bd_hd {display:none !important}
+.bd_tl {margin: 0 0 15px 0}
+.bd_tl h1, .bd_tl h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 22px;    
+}
+.bd_tl i {display: none;}
+/*
+.bd .lst_btn {display:none !important} 목록 아이콘 */
+ 
+/* board category */
+.bd_cnb,
+.bd_cnb .bg_f_f9 {
+background:none;border-color:#efefef;
+border-radius: 0;
+box-shadow: none;
+}
+.bd_cnb .bg_f_f9 {border: 0}
+ 
+/* board bottom */
+.bd a.btn_img {padding:4px 10px;height:auto;font-size:13px} /* 버튼 폰트 */
+.bd .lst_btn, /* 리스트 버튼 */ 
+.bd a i[class*=ico_16px] {display:none} /* 버튼 아이콘 */ 
+.bd a i.home {display:block} /* 카테고리 홈 아이콘 */
+.btm_mn {padding-left:0;padding-right:0;} /* 목록 하단 버튼 패딩 */
+ 
+/* board font */
+table {font-family:'Open Sans','Apple SD 산돌고딕 Neo','Apple SD Gothic Neo','나눔고딕',NanumGothic,ng;}
+.bd, .bd input, .bd textarea,
+.bd select, .bd button, .bd table,
+.bd_tb_lst td.title
+{font-size:14px;}
+ 
+.bd_zine.card h3 {letter-spacing: 0 !important;}/* 웹진 제목 */
+.bd_zine.card .cnt {font-size:13px;line-height:1.6;color:#888;} /* 웹진 내용폰트 */
+.bd_zine.card .info {font-size:12px;} /* 웹진 날짜,글쓴이... 폰트 */
+ 
+/* board body */
+.rd_ft .rd_vote {display: none;}
+ 
+/* board list */
+.bd .bg_f_f9 {background:none;}
+.bd_tb_lst th, 
+.bd_tb_lst td {padding: 15px 12px;font-size:13px;} /* 목록형 상하간격 */
+.bd_tb_lst th {border-top: 2px solid #444;border-bottom: 1px solid #D0D0D0;}
+ 
+/* board webzine */
+.bd_zine .cnt {margin-top: 20px;font-size: 14px;color: #777;} /* 웹진 기본 제목,내용 간격, 폰트 */
+ 
+/* board gallery */
+.bd_tmb_lst .tmb_wrp {border:0} /*  */
+ 
+/* faq */
+.bd_faq {margin-top: 12px;}
+.bd_faq>li:hover, .bd_faq .open, .bd_faq .notice {background-color: #fff;}
+.bd_faq .a {background-color: #f5f5f5;border: 0;border-radius: 0;}
+.bd_faq .mrk {
+top: 0;
+width: 18px;height: 18px;
+color: #fff;background: #888888;border: 0;
+box-shadow: none;text-shadow: none;
+border-radius: 50%;
+}
+.bd_faq .mrkA {display: none;}
+.bd_faq .article .mrk {
+    font: 500 11px/18px Arial,Helvetica,sans-serif;
+}
+.bd_faq .q {font-size: 14px;color: #666;}
+.bd_faq .url {display: none;}
+.bd_faq .editArea {margin-bottom: 0;}
+.bd_faq p {color: #666;}
+ 
+.bd_lst input[type=checkbox] {z-index: 1;}
+.exForm .text, 
+.exForm .homepage, 
+.exForm .email_address, 
+.exForm .tel, 
+.exForm .address, 
+.exForm .date {height: auto;}
+ 
+/* 
+* Contact_Write
+---------------------------------------*/
+.board .extraVarsList input[type=checkbox], 
+.board .extraVarsList input[type=radio],
+.board .extraVarsList label {margin-top: 0;margin-bottom: 0;}
+.board .extraVarsList .radio {display: inline-block;}
+ 
+.extraVarsList tr td a span{
+    padding:0!important;
+    /*border: 0!important;*/
+}
+.extraVarsList tr td a span.cke_button_label{display:none}
+.extraVarsList td p.xefu-dropzone-message {display: inline-block;}
+.extraVarsList td p.upload_info {display: none;}
+.extraVarsList td p.xefu-dropzone-message,
+.extraVarsList td p.upload_info {line-height: 1;}
+.cke_combo_open{display:inline-block!important}
+.cke_combo_arrow{border-left:3px solid transparent!important;border-right:3px solid transparent!important;border-top:3px solid #474747!important}
+.boardListForm td.checkbox {display: table-cell;margin: 0;}
+.boardListForm .checkbox input[type=checkbox] {margin: -5px;}
+.categoryList .categoryThisItem a,
+.categoryList .categoryItemOver a {height: auto;}
+ 
+.board input[type=radio], input[type=checkbox],
+.board .checkbox {
+    margin: 0;
+}
+.board .checkbox input[type=checkbox] {
+    position: relative;
+    float: none;
+    margin: 0;
+}
+
+
+/*rhymix*/
+.xefu-dropzone,
+.cke_1 .cke_top,
+.cke_1 .cke_bottom {
+    background-color: #fff !important;
+}
+ 
+@media (min-width: 992px) {
+.bd_zine h3 {font-size: 18px;}
+.extraVarsList td .iText {width: 69%}
+}
